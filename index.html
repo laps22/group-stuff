@@ -3,17 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="/group-stuff/assets/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Document</title>
 </head>
 
 <header>
-
+    
 </header>
 
-<body>
-   <script src="/group-stuff/assets/js/script.js"></script> 
+<body onload="onPageLoad()">
+    <nav>Just area to keep the toggle off the top of the webpage</nav>
+    <div>
+        <h4 style="text-align: right">Include Explicit Music</h4>
+        <div>
+        <label for="darkToggle" class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div>
+         <p>This is just content for me to test my toggle on</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="tokenSection" class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="clientID" class="form-label">Client ID</label>
+                    <input type="text" class="form-control" id="ClientID" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="clientSecret" class="form-label">Client Secret</label>
+                    <input type="text" class="form-control" id="clientSecret" placeholder="">
+                </div>
+                <input class="btn-primary" type="button" onclick="requestAuthorization()" value="Request Authorization"><br>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+    <h1>Spotify Web Playback SDK Quick Start</h1>
+    </div>
+    <section>
+        <button class="togglePlay" class="btn"><i class="fa-solid fa-play">Toggle Play/Pause</i></button>
+    </section>
+
+
+
+    <!-- Im working on making the slider here for target heart rate, then ill connect it using javascript later -->
+    <span>What is your target heart rate for this activity?</span>
+    <div class="slidecontainer">
+        <input type="range" min="60" max="180" value="120" class="hrSlider" id="myRange">
+    </div>
+    <br>
+    <div>
+        <p id="slideOutput"></p>
+    </div>
+
+
+    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+   <script src="assets/js/script.js"></script> 
 </body>
 </html>
