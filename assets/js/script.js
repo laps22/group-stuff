@@ -1,10 +1,19 @@
+var selectOptions = document.getElementById('activity')
+
 document.addEventListener('DOMContentLoaded', function () {
   var dropdowns = document.querySelectorAll('select');
   var instances = M.FormSelect.init(dropdowns, '');
 });
 
-// add event listener to onclick
+// Selecting Activity and pulling value
 
+var formSelect = function (event) {
+  console.log(event.target.value)
+  getActivity(event.target.value);
+
+};
+
+//API fetch
 var getActivity = function (activity) {
   var apiUrl = 'https://api.api-ninjas.com/v1/caloriesburned?activity=' + activity;
 
@@ -13,19 +22,20 @@ var getActivity = function (activity) {
     contentType: 'application/json',
   })
     .then(function (response) {
-      if (response.ok) {
-        response.json().then(function (data) {
-          displayActivity(activity);
-        });
-      }
+      console.log(response)
+      return response.json()
+    })
+    .then(function (data) {
+      console.log(data)
     })
     .catch(function (error) {
-      // alert('Unable to connect to API');
       console.log(error)
     });
-}
+};
+var displayActivity = function (activity, value) {
+  return;
+};
 
-getActivity('yoga');
-
-
+//Event listener once value has been selected
+selectOptions.addEventListener('change', formSelect)
 
