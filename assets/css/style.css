@@ -1,13 +1,13 @@
-body {
+/* body {
     padding: 25px;
     background-color: white;
     color: black;
     font-size: 25px;
-  }
+  } */
 
 .darkToggle:checked {
     background: #333;
-}
+} 
   
 .dark {
     color: white;
@@ -23,7 +23,7 @@ body {
     height: 34px;
 }
 
-.switch input { 
+/* .switch input { 
     opacity: 0;
     width: 0;
     height: 0;
@@ -73,17 +73,18 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
-}
+} */
 
 
 /* im going to add the toggle CSS here later but im having trouble getting it to work outside of the style bracket rn */
 /* this is going to be the CSS for the slider */
+/* 
 .slidecontainer {
     width: 50%; /* Width of the outside container */
-  }
-  
+  /* }
+   
 /* The slider itself */
-.hrSlider {
+/* .hrSlider {
     position: fixed;
     height: 25px;
     width: 500px;
@@ -92,5 +93,5 @@ input:checked + .slider:before {
 
 .hrSlider:hover {
     opacity: 1;
-}
+} */
 
