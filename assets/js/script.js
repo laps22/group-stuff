@@ -27,6 +27,8 @@ var formSelect = function (event) {
 
 };
 
+var submitButton = document.getElementById('submit');
+
 //API fetch
 var getActivity = function (activity) {
   var apiUrl = 'https://api.api-ninjas.com/v1/caloriesburned?activity=' + activity;
