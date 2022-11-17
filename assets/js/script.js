@@ -10,6 +10,11 @@ var submitButton = document.getElementById('#submit');
 var checkboxes = document.querySelectorAll('input[name="Genre"]');
 var selectedGenres = document.querySelectorAll('input[name="Genre"]:checked');
 
+//If statement to display error message If no values are picked
+// checkboxes.forEach(function(checkbox) {
+//     if (checkbox.checked==false) 
+//     alert('Please select your Genre');
+// });
 
 //set values that will go into final API URL
 var genreID = selectedGenres.value;
@@ -21,6 +26,8 @@ var formSelect = function (event) {
   getActivity(event.target.value);
 
 };
+
+var submitButton = document.getElementById('submit');
 
 //API fetch
 var getActivity = function (activity) {
