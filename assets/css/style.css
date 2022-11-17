@@ -15,7 +15,7 @@ body {
 }
 
 /* CSS for toggle */
-.switch {
+ .switch {
     position: absolute;
     right: 0;
     display: flex;
