@@ -39,11 +39,21 @@ var displayActivity = function (activity, value) {
 //Event listener once value has been selected
 selectOptions.addEventListener('change', formSelect)
 
+// JS from Kenji's section
 var darkToggle = document.querySelector('#darkToggle');
+var yesExplicit = "Yes";
+var noExplicit = "No";
+var statusExplicit = '';
 
 // dark mode / hopefully explicit filter later on
 darkToggle.addEventListener('click', ()=> {
   document.body.classList.toggle('dark');
+  if (darkToggle) {
+    statusExplicit = statusExplicit.concat(yesExplicit)
+  };
+  if (!darkToggle) {
+    statusExplicit = statusExplicit.concat(noExplicit)
+  };
 })
 
 // Slider for quantity of songs requested

@@ -1,82 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width" initial-scale="1.0" />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <title>Perfect Playlist</title>
-</head>
+  </head>
 
-<!-- Navbar goes here -->
-<nav>
+  <!-- Navbar goes here -->
+  <nav>
     <div class="nav-wrapper col s12 cyan">
-            <a class="brand-logo left">Perfect Playlist</a>
+      <a class="brand-logo left">Perfect Playlist</a>
     </div>
     <div>
-        <h4 style="text-align: right">Include Explicit Music</h4>
-        <div>
+      <h4 style="text-align: right">Include Explicit Music</h4>
+      <div>
         <label for="darkToggle" class="switch">
-            <input type="checkbox" id="darkToggle">
-            <span class="slider round"></span>
+          <input type="checkbox" id="darkToggle" />
+          <span class="slider round"></span>
         </label>
-        </div>
-        <div>
-         <p>This is just content for me to test my toggle on</p>
-        </div>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<body>
-
+  <body>
     <!-- Page Layout here -->
     <div class="row">
-
-        <div class="col s4 grey lighten-2">
-            <p>Criteria Selectors</p>
-            <!-- Criteria sidebar -->
-            <!-- change slider to quantity of songs -->
+      <div class="col s4 grey lighten-2">
+        <p>Criteria Selectors</p>
+        <!-- Criteria sidebar -->
+        <!-- change slider to quantity of songs -->
         <span>How many songs do you want in the playlist?</span>
         <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="hrSlider"
+            id="myRange"
+          />
         </div>
-        <br>
+        <br />
         <div>
-            <p id="slideOutput"></p>
+          <p id="slideOutput"></p>
         </div>
 
-
-            <div class="container">
-
-                <!-- <div class="input-field"> -->
-                <select id="activity">
-                    <option value=" " disabled selected>Select an Activity</option>
-                    <option value="Yoga">Yoga</option>
-                    <option value="Cycling">Cycling</option>
-                    <option value="Walking">Walking</option>
-                    <option value="Lifting">Weight Lifting</option>
-                    <option value="run">Running</option>
-                </select>
-            </div>
-
+        <div class="container">
+          <!-- <div class="input-field"> -->
+          <select id="activity">
+            <option value=" " disabled selected>Select an Activity</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Walking">Walking</option>
+            <option value="Lifting">Weight Lifting</option>
+            <option value="run">Running</option>
+          </select>
         </div>
+      </div>
 
-        <div class="col s8 cyan lighten-5">
-            <p>Playlist Display</p> <!-- "Playlist" display -->
-        </div>
-
+      <div class="col s8 cyan lighten-5">
+        <p>Playlist Display</p>
+        <!-- "Playlist" display -->
+      </div>
     </div>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/script.js"></script>
     <!-- Compiled and minified JavaScript -->
-</body>
-
+  </body>
 </html>
