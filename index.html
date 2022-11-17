@@ -15,7 +15,19 @@
 <!-- Navbar goes here -->
 <nav>
     <div class="nav-wrapper col s12 cyan">
-        <a class="brand-logo left">Perfect Playlist</a>
+            <a class="brand-logo left">Perfect Playlist</a>
+    </div>
+    <div>
+        <h4 style="text-align: right">Include Explicit Music</h4>
+        <div>
+        <label for="darkToggle" class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div>
+         <p>This is just content for me to test my toggle on</p>
+        </div>
     </div>
 </nav>
 
@@ -27,6 +39,16 @@
         <div class="col s4 grey lighten-2">
             <p>Criteria Selectors</p>
             <!-- Criteria sidebar -->
+            <!-- change slider to quantity of songs -->
+        <span>How many songs do you want in the playlist?</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
+        </div>
+        <br>
+        <div>
+            <p id="slideOutput"></p>
+        </div>
+
 
             <div class="container">
 
