@@ -39,30 +39,69 @@
             <!-- Criteria sidebar -->
                 <!-- Select Genres Card-->
         <div class="Genres">
-            <h3>Select your Genre</h3>
-                <form action="/action_page.php">
-                    <input type="checkbox" id="Hip-Hop" name="Genre" value="18">
-                    <label for="Hip-Hop"> Hip-Hop</label><br>
-                    <input type="checkbox" id="Rock" name="Genre" value="21">
-                    <label for="Rock"> Rock</label><br>
-                    <input type="checkbox" id="Pop" name="Genre" value="14">
-                    <label for="Pop"> Pop</label><br>
-                    <input type="checkbox" id="Latin" name="Genre" value="12">
-                    <label for="Latin"> Latin</label><br>
-                    <input type="checkbox" id="Classical" name="Genre" value="5">
-                    <label for="Classical"> Classical</label><br>
-                    <input type="checkbox" id="R&B" name="Genre" value="15">
-                    <label for="R&B"> R&B</label><br>
-                    <input type="checkbox" id="EDM" name="Genre" value="7">
-                    <label for="EDM"> EDM</label><br><br>
-                    <input type="checkbox" id="Jazz" name="Genre" value="11">
-                    <label for="Jazz"> Jazz</label><br>
-                    <input type="checkbox" id="Alternative" name="Genre" value="20">
-                    <label for="Alternative"> Alternative</label><br>
-                    <input type="checkbox" id="Country" name="Genre" value="6">
-                    <label for="Country"> Country</label><br><br>
-                    <input type="submit" value="Submit">
-                </form>
+            <h3>Select one Genre</h3>
+            <form action="#">
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Hip-Hop" name="Hip-Hop" value="18" />
+                    <span>Hip-Hop</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Rock" name="Rock" value="21"/>
+                    <span>Rock</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Pop" name="Pop" value="Pop"/>
+                    <span>14</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Latin" name="Latin" value="12"/>
+                    <span>Latin</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Classical" name="Classical" value="5"/>
+                    <span>Classical</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="R&B" name="R&B" value="15"/>
+                    <span>R&B</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="EDM" name="EDM" value="7"/>
+                    <span>EDM</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Jazz" name="Jazz" value="11"/>
+                    <span>Jazz</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Alternative" name="Alternative" value="20"/>
+                    <span>Alternative</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" id="Country" name="Country" value="6"/>
+                    <span>Country</span>
+                  </label>
+                </p>
+            </form>
         </div>
             <!-- change slider to quantity of songs -->
         <span>How many songs do you want in the playlist?</span>
@@ -96,7 +135,7 @@
 
     </div>
 
-
+    <button type="submit" id="submit" value="submit">Submit</button>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

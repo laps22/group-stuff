@@ -5,16 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.FormSelect.init(dropdowns, '');
 });
 
-var submitButton = document.getElementById('submit-button');
+var submitButton = document.getElementById('#submit');
 //Element to track my checked or unchecked boxes
 var checkboxes = document.querySelectorAll('input[name="Genre"]');
 var selectedGenres = document.querySelectorAll('input[name="Genre"]:checked');
 
-//If statement to display error message If no values are picked
-checkboxes.forEach(function(checkbox) {
-    if (checkbox.checked==false) 
-    alert('Please select your Genre');
-});
 
 //set values that will go into final API URL
 var genreID = selectedGenres.value;
@@ -54,10 +49,19 @@ var displayActivity = function (activity, value) {
 selectOptions.addEventListener('change', formSelect)
 
 var darkToggle = document.querySelector('#darkToggle');
+var explicit = '';
+var noExplicit = 'No';
+var yesExplicit = 'Yes';
 
 // dark mode / hopefully explicit filter later on
 darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
+  if (darkToggle) {
+    explicit = explicit.concat(yesExplicit)
+  }
+  if (!darkToggle) {
+    explicit = explicit.concat(noExplicit)
+  }
 })
 
 // Slider for quantity of songs requested
@@ -69,17 +73,15 @@ sliderValue.oninput = function () {
   output.innerHTML = this.value;
 }
 
-const searchElem = document.querySelector('#search');
-searchElem.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    getContent(searchElem.value)
-  }
+const searchElem = document.querySelector('#submit');
+searchElem.addEventListener('click', (event) => {
+  getContent(searchElem.value);
 });
 
 const getContent = (search) => {
   const url = new URL('https://itunes.apple.com/search');
   var rangeValue = sliderValue.value;
-  const params = { term: search, media: 'music', limit: rangeValue };
+  const params = { term: search, media: 'music', limit: rangeValue, explicit: explicit, genreIndex: genreID};
   url.search = new URLSearchParams(params);
   fetch(url, { method: 'POST' })
     .then(results => results.json())
