@@ -4,32 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="https://itunes.apple.com/search?parameterkeyvalue">
-    <title>Site toggle and track limits</title>
-</head>
-
-<header>
-    
-</header>
-
-<body>
-    <nav>Just area to keep the toggle off the top of the webpage</nav>
-    <div>
-        <h4 style="text-align: right">Include Explicit Music</h4>
-        <div>
-        <label for="darkToggle" class="switch">
-            <input type="checkbox" id="darkToggle">
-            <span class="slider round"></span>
-        </label>
-        </div>
-        <div>
-         <p>This is just content for me to test my toggle on</p>
-        </div>
-=======
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -41,7 +15,19 @@
 <!-- Navbar goes here -->
 <nav>
     <div class="nav-wrapper col s12 cyan">
-        <a class="brand-logo left">Perfect Playlist</a>
+            <a class="brand-logo left">Perfect Playlist</a>
+    </div>
+    <div>
+        <h4 style="text-align: right">Include Explicit Music</h4>
+        <div>
+        <label for="darkToggle" class="switch">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div>
+         <p>This is just content for me to test my toggle on</p>
+        </div>
     </div>
 </nav>
 
@@ -53,6 +39,16 @@
         <div class="col s4 grey lighten-2">
             <p>Criteria Selectors</p>
             <!-- Criteria sidebar -->
+            <!-- change slider to quantity of songs -->
+        <span>How many songs do you want in the playlist?</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
+        </div>
+        <br>
+        <div>
+            <p id="slideOutput"></p>
+        </div>
+
 
             <div class="container">
 
@@ -73,33 +69,14 @@
             <p>Playlist Display</p> <!-- "Playlist" display -->
         </div>
 
->>>>>>> 62c6142983581e4b12d21ef70bdf4aaa3988ac4a
     </div>
 
 
 
 
-<<<<<<< HEAD
-    <!-- change slider to quantity of songs -->
-    <span>How many songs do you want in the playlist?</span>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
-    </div>
-    <br>
-    <div>
-        <p id="slideOutput"></p>
-    </div>
-
-    <div class="container"></div>
-    <input type="text" id="search" autocapitalize="off" spellcheck="false" autocorrect="off">
-
-
-   <script src="assets/js/script.js"></script> 
-=======
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/js/script.js"></script>
     <!-- Compiled and minified JavaScript -->
->>>>>>> 62c6142983581e4b12d21ef70bdf4aaa3988ac4a
 </body>
 
 </html>
