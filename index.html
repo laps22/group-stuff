@@ -7,101 +7,193 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Perfect Playlist</title>
 </head>
 
-<!-- Navbar goes here -->
-<nav>
-    <div class="nav-wrapper col s12 cyan">
-            <a class="brand-logo left">Perfect Playlist</a>
-    </div>
-    <div>
-        <h4 style="text-align: right">Include Explicit Music</h4>
-        <div>
-        <label for="darkToggle" class="switch">
-            <input type="checkbox" id="darkToggle">
-            <span class="slider round"></span>
-        </label>
+    <!-- Navbar goes here -->
+    <nav>
+        <div class="nav-wrapper col s12 teal">
+            <a class="brand-logo left col s2">Perfect Playlist</a>
+
+            <div>
+                <p style="text-align: right">Include Explicit Music</p>
+                <div class="switch">
+                    <label for="darkToggle" class="switch">
+                        <input type="checkbox" id="darkToggle">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+
+            </div>
         </div>
+    </nav>
 
-    </div>
-</nav>
+    <body>
 
-<body>
+        <!-- Page Layout here -->
+        <div class="row">
 
-    <!-- Page Layout here -->
-    <div class="row">
+            <div class="col s4 grey lighten-2">
+                <!-- <p>Criteria Selectors</p> -->
+                <!-- Criteria sidebar -->
+                <div class="container">
 
-        <div class="col s4 grey lighten-2">
-            <p>Criteria Selectors</p>
-            <!-- Criteria sidebar -->
+                    <!-- <div class="input-field"> -->
+                    <select id="activity">
+                        <option value=" " disabled selected>Select an Activity</option>
+                        <option value="Yoga">Yoga (290 calories per hour)</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Lifting">Weight Lifting</option>
+                        <option value="run">Running</option>
+                    </select>
+                </div>
+
                 <!-- Select Genres Card-->
-        <div class="Genres">
-            <h3>Select your Genre</h3>
-                <form action="/action_page.php">
-                    <input type="checkbox" id="Hip-Hop" name="Genre" value="18">
-                    <label for="Hip-Hop"> Hip-Hop</label><br>
-                    <input type="checkbox" id="Rock" name="Genre" value="21">
-                    <label for="Rock"> Rock</label><br>
-                    <input type="checkbox" id="Pop" name="Genre" value="14">
-                    <label for="Pop"> Pop</label><br>
-                    <input type="checkbox" id="Latin" name="Genre" value="12">
-                    <label for="Latin"> Latin</label><br>
-                    <input type="checkbox" id="Classical" name="Genre" value="5">
-                    <label for="Classical"> Classical</label><br>
-                    <input type="checkbox" id="R&B" name="Genre" value="15">
-                    <label for="R&B"> R&B</label><br>
-                    <input type="checkbox" id="EDM" name="Genre" value="7">
-                    <label for="EDM"> EDM</label><br><br>
-                    <input type="checkbox" id="Jazz" name="Genre" value="11">
-                    <label for="Jazz"> Jazz</label><br>
-                    <input type="checkbox" id="Alternative" name="Genre" value="20">
-                    <label for="Alternative"> Alternative</label><br>
-                    <input type="checkbox" id="Country" name="Genre" value="6">
-                    <label for="Country"> Country</label><br><br>
-                    <input type="submit" value="Submit">
+                <div class="Genres">
+                    <p>Select A Genre</p>
+                    <form action="/action_page.php">
+                        <p>
+                            <label for="Hip-Hop">
+                                <input type="checkbox" class="filled-in cyan" id="Hip-Hop" name="Genre" value="18">
+                                <span>Hip-Hop</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="Rock">
+                                <input type="checkbox" class="filled-in cyan" id="Rock" name="Genre" value="21">
+                                <span>Rock</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Pop">
+                                <input type="checkbox" class="filled-in cyan" id="Pop" name="Genre" value="14">
+                                <span>Pop</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Latin">
+                                <input type="checkbox" class="filled-in cyan" id="Latin" name="Genre" value="12">
+                                <span>Latin</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Classical">
+                                <input type="checkbox" class="filled-in cyan" id="Classical" name="Genre" value="5">
+                                <span>Classical</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="R&B">
+                                <input type="checkbox" class="filled-in cyan" id="R&B" name="Genre" value="15">
+                                <span>R&B</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="EDM">
+                                <input type="checkbox" class="filled-in cyan" id="EDM" name="Genre" value="7">
+                                <span>EDM</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Jazz">
+                                <input type="checkbox" class="filled-in cyan" id="Jazz" name="Genre" value="11">
+                                <span>Jazz</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Alternative">
+                                <input type="checkbox" class="filled-in cyan" id="Alternative" name="Genre" value="20">
+                                <span>Alternative</span>
+                            </label>
+
+                        </p>
+                        <p>
+                            <label for="Country">
+                                <input type="checkbox" class="filled-in cyan" id="Country" name="Genre" value="6">
+                                <span>Country</span>
+                            </label>
+
+                        </p>
+                    </form>
+                </div>
+                <!-- change slider to quantity of songs -->
+                <span>How many songs do you want in the playlist?</span>
+
+                <form action="#">
+                    <p class="range-field">
+                        <input type="range" id="myRange" min="1" max="100" value="50" />
+                    </p>
                 </form>
-        </div>
-            <!-- change slider to quantity of songs -->
-        <span>How many songs do you want in the playlist?</span>
-        <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
-        </div>
-        <br>
-        <div>
-            <p id="slideOutput"></p>
-        </div>
+                <!-- <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="hrSlider" id="myRange">
+            </div> -->
+                <div>
+                    <p id="slideOutput"></p><br>
+                </div>
 
+                <div>
+                    <button class="centered btn waves-effect waves-light" type="submit" name="action" id=submit
+                        value="Submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
 
-            <div class="container">
+            <div class="col s8 teal lighten-5">
+                <p>Playlist Display</p> <!-- "Playlist" display -->
 
-                <!-- <div class="input-field"> -->
-                <select id="activity">
-                    <option value=" " disabled selected>Select an Activity</option>
-                    <option value="Yoga">Yoga</option>
-                    <option value="Cycling">Cycling</option>
-                    <option value="Walking">Walking</option>
-                    <option value="Lifting">Weight Lifting</option>
-                    <option value="run">Running</option>
-                </select>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <i class="material-icons circle green">insert_chart</i>
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <i class="material-icons circle green">insert_chart</i>
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <i class="material-icons circle green">insert_chart</i>
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <i class="material-icons circle green">insert_chart</i>
+                        <span class="title">Title</span>
+                        <p>First Line <br>
+                            Second Line
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                </ul>
             </div>
 
         </div>
 
-        <div class="col s8 cyan lighten-5">
-            <p>Playlist Display</p> <!-- "Playlist" display -->
-        </div>
-
-    </div>
-
-    <button type="submit" id=submit value="Submit">Submit</button>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="assets/js/script.js"></script>
+<!-- Compiled and minified JavaScript -->
 </body>
 
 </html>
