@@ -23,6 +23,10 @@ APIs: iTunes Search and API Ninjas: Calories Burned
 
 Languages: HTML,CSS, Javascript
 
+## Screenshot
+<img src="/Users/lianperez/bootcamp/group-stuff/assets/images/Finished Product/perfectplay.png">
+
+
 
 
 
