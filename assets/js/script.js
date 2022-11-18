@@ -83,6 +83,37 @@ sliderValue.oninput = function () {
   output.innerHTML = this.value;
 }
 
+ var songResults = function (data) {
+   console.log(data);
+   var results = data.results;
+
+   $(".collection").empty();
+   document.querySelector("title").style.display = "block";
+   for (var i = 0; i < results.length; i++) {
+    var repoInfo =
+    "<i class=material-icons circle green'>" +
+      " <img src='"+ results[i].artworkUrl60 +
+       "' alt='Poster image of '" +
+       results[i].trackName +
+       '"/> </i> ' + "<span class='title'>" + results[i].trackName + "</span>" +
+       "<p>artist: " +results[i].artistName+ "</p>";
+
+     var liElement = $('<li>')
+     liElement.addClass("collection-item avatar")
+     liElement.html(repoInfo)
+     $('.collection').append(liElement)
+   }
+ };
+
+ const getContent = (search, genreId) => {
+  const url = new URL('https://itunes.apple.com/search');
+  var rangeValue = sliderValue.value;
+  const params = { term: 'search', media: 'music', limit: rangeValue, explicit: explicit, genreIndex: genreId};
+  url.search = new URLSearchParams(params);
+  fetch(url, { method: 'POST' })
+    .then(response => response.json()).then(result => songResults(result))
+};
+
 const searchElem = document.querySelector('#search');
 
 searchElem.addEventListener('click', (event) => {
@@ -92,48 +123,12 @@ searchElem.addEventListener('click', (event) => {
   getContent(searchElem.value, genreId);
 });
 
-const getContent = (search, genreId) => {
-  const url = new URL('https://itunes.apple.com/search');
-  var rangeValue = sliderValue.value;
-  const params = { term: 'search', media: 'music', limit: rangeValue, explicit: explicit, genreIndex: genreId};
-  url.search = new URLSearchParams(params);
-  fetch(url, { method: 'POST' })
-    .then(response => response.json()).then(result => songResults(result))
-};
+var generateButton = document.querySelector("Generate");
 
+ function displayPlaylist(){
+    var playlist = getContent();
+    var playlistText = document.querySelector("#generatedPlayList");
+    playlist.value = playlist
+   }
 
-// var generateButton = document.querySelector("Generate");
-
-// function displayPlaylist(){
-//     var playlist = getContent();
-//     var playlistText = document.querySelector("#generatedPlayList");
-//     playlist.value = playlist
-// }
-
-// generateButton.addEventListener("click", displayPlaylist)
-
-// var songResults = function (data) {
-//   console.log(data);
-//   var results = data.results;
-
-//   $(".collection").empty();
-//   document.querySelector("title").style.display = "block";
-//   for (var i = 0; i < results.length; i++) {
-//     var repoInfo =
-//       "name: " +
-//       results[i].trackName +
-//       " (" +
-//       results[i].primaryGenreName +
-//       ")" +
-//       "<br>Length: " +
-//       results[i].artistName +
-//       "<img src=" +
-//       results[i].artworkUrl60 +
-//       '" alt="Poster image of ' +
-//       results[i].trackName +
-//       '"> ';
-//     var liElement = $('<li>')
-//     liElement.html(repoInfo)
-//     $('.collection').append(liElement)
-//   }
-// };
+ generateButton.addEventListener("click", displayPlaylist)
