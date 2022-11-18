@@ -83,6 +83,9 @@ sliderValue.oninput = function () {
   output.innerHTML = this.value;
 }
 
+
+
+
  var songResults = function (data) {
    console.log(data);
    var results = data.results;
@@ -132,3 +135,4 @@ var generateButton = document.querySelector("Generate");
    }
 
  generateButton.addEventListener("click", displayPlaylist)
+
