@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.FormSelect.init(dropdowns, '');
 });
 
-var submitButton = document.getElementById('submit-button');
+var submitButton = document.getElementById('#submit');
 //Element to track my checked or unchecked boxes
-var checkboxes = document.querySelectorAll('input[name="Genre"]');
-var selectedGenres = document.querySelectorAll('input[name="Genre"]:checked');
+// var selectedGenre = document.querySelectorAll('input[name="fill-in cyan"]:checked');
+
+
 
 //If statement to display error message If no values are picked
 // checkboxes.forEach(function(checkbox) {
@@ -17,7 +18,7 @@ var selectedGenres = document.querySelectorAll('input[name="Genre"]:checked');
 // });
 
 //set values that will go into final API URL
-var genreID = selectedGenres.value;
+// var genreID = selectedGenre.value;
 
 // Selecting Activity and pulling value
 
@@ -57,9 +58,20 @@ selectOptions.addEventListener('change', formSelect)
 
 var darkToggle = document.querySelector('#darkToggle');
 
+var noExplicit = "No";
+var yesExplicit = "Yes";
+
+var explicit = '';
+
 // dark mode / hopefully explicit filter later on
 darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
+  if (darkToggle) {
+    explicit = explicit.concat(yesExplicit)
+  }
+  if (darkToggle === 'checked') {
+    explicit = explicit.concat(noExplicit)
+  }
 })
 
 // Slider for quantity of songs requested
@@ -72,27 +84,56 @@ sliderValue.oninput = function () {
 }
 
 const searchElem = document.querySelector('#search');
-searchElem.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    getContent(searchElem.value)
-  }
+
+searchElem.addEventListener('click', (event) => {
+  var checkboxes = document.querySelectorAll('input[name="Genre"]');
+  var genreId = $('.genres:checkbox:checked').val();
+  console.log(genreId)
+  getContent(searchElem.value, genreId);
 });
 
-const getContent = (search) => {
+const getContent = (search, genreId) => {
   const url = new URL('https://itunes.apple.com/search');
   var rangeValue = sliderValue.value;
-  const params = { term: search, media: 'music', limit: rangeValue };
+  const params = { term: 'search', media: 'music', limit: rangeValue, explicit: explicit, genreIndex: genreId};
   url.search = new URLSearchParams(params);
   fetch(url, { method: 'POST' })
-    .then(results => results.json())
+    .then(response => response.json()).then(result => songResults(result))
 };
 
-var generateButton = document.querySelector("Generate");
 
-function displayPlaylist(){
-    var playlist = getContent();
-    var playlistText = document.querySelector("#generatedPlayList");
-    playlist.value = playlist
-}
+// var generateButton = document.querySelector("Generate");
 
-generateButton.addEventListener("click", displayPlaylist)
+// function displayPlaylist(){
+//     var playlist = getContent();
+//     var playlistText = document.querySelector("#generatedPlayList");
+//     playlist.value = playlist
+// }
+
+// generateButton.addEventListener("click", displayPlaylist)
+
+// var songResults = function (data) {
+//   console.log(data);
+//   var results = data.results;
+
+//   $(".collection").empty();
+//   document.querySelector("title").style.display = "block";
+//   for (var i = 0; i < results.length; i++) {
+//     var repoInfo =
+//       "name: " +
+//       results[i].trackName +
+//       " (" +
+//       results[i].primaryGenreName +
+//       ")" +
+//       "<br>Length: " +
+//       results[i].artistName +
+//       "<img src=" +
+//       results[i].artworkUrl60 +
+//       '" alt="Poster image of ' +
+//       results[i].trackName +
+//       '"> ';
+//     var liElement = $('<li>')
+//     liElement.html(repoInfo)
+//     $('.collection').append(liElement)
+//   }
+// };
